@@ -8,7 +8,7 @@ import Forecast from './components/Forecast';
 import getFormattedWeatherData from './services/weatherService';
 import {useEffect, useState} from "react";
 import { data } from 'autoprefixer';
-import 'react-toastify/dist/ReactToastify.css';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,10 +25,7 @@ function App() {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const message = query.q ? query.q : "current location.";
-
       
-
       await getFormattedWeatherData({...query, units}).then(
         (data) => {
          
