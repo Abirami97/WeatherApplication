@@ -9,13 +9,6 @@ import getFormattedWeatherData from './services/weatherService';
 import {useEffect, useState} from "react";
 import { data } from 'autoprefixer';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
 
 function App() {
 
@@ -25,20 +18,19 @@ function App() {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      
+
       await getFormattedWeatherData({...query, units}).then(
         (data) => {
          
+
         setWeather(data);
       }); 
       
-    
       };
     
       fetchWeather();
 
   }, [query, units]);
-
 
   const formatBackground = () => {
     if (!weather) return "from-cyan-700 to-blue-700";
